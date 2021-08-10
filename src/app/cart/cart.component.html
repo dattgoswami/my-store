@@ -1,0 +1,22 @@
+
+<div class="cart-container" *ngFor="let product of products">
+    <ul>
+<li>{{product.name}}</li>
+<li>{{product.price}}</li>
+</ul>
+<img src="{{product.url}}" alt="{{product.description}}">
+<input type="number" min="1" max="100" value="{{product.quantity}}">
+</div>
+
+<form #form="ngForm" (ngSubmit)="placeOrder()">
+    <p>Full Name</p>
+    <input type="text" name="fullname" minlength="3" placeholder="(minimum 3 characters)" [(ngModel)]="fullname">
+    <p>Address</p>
+    <input type="text" name="address" required minlength="6" placeholder="(minimum 6 characters)" [(ngModel)]="address">
+    <p>Credit card number</p>
+    <input type="text" name="cardnumber" required minlength="16" maxlength="16"  placeholder="(16-digit number)" [(ngModel)]="cardnumber">
+    <br>
+    <button [disabled]="form.invalid" class="btn btn-primary" >Submit and Place Order</button>
+</form>
+
+<button class="btn btn-primary" (click)="clearCart()"> Clear all the cart items</button>
