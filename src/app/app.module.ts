@@ -11,6 +11,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { FormsModule } from '@angular/forms';
 import { ProductItemDetailComponent } from './product-item-detail/product-item-detail.component';
+import { ConfirmationComponent } from './confirmation/confirmation.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,6 +20,7 @@ import { ProductItemDetailComponent } from './product-item-detail/product-item-d
     CartComponent,
     NavBarComponent,
     ProductItemDetailComponent,
+    ConfirmationComponent,
   ],
   imports: [
     BrowserModule,

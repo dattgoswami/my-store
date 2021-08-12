@@ -1,14 +1,14 @@
 
-<div class="cart-container" *ngFor="let product of products">
+<div class="cart-container" *ngFor="let productQ of productsQuantity">
     <ul>
-<li>{{product.name}}</li>
-<li>{{product.price}}</li>
+<li>{{productQ.product.name}}</li>
+<li>{{productQ.product.price}}</li>
 </ul>
-<img src="{{product.url}}" alt="{{product.description}}">
-<input type="number" min="1" max="100" value="{{product.quantity}}">
+<img src="{{productQ.product.url}}" alt="{{productQ.product.description}}">
+<input type="number" min="1" max="100" value="{{productQ.quantity}}">
 </div>
-
-<form #form="ngForm" (ngSubmit)="placeOrder()">
+<p><b>Total:</b> {{total}}</p>
+<form #form="ngForm">
     <p>Full Name</p>
     <input type="text" name="fullname" minlength="3" placeholder="(minimum 3 characters)" [(ngModel)]="fullname">
     <p>Address</p>
@@ -16,7 +16,7 @@
     <p>Credit card number</p>
     <input type="text" name="cardnumber" required minlength="16" maxlength="16"  placeholder="(16-digit number)" [(ngModel)]="cardnumber">
     <br>
-    <button [disabled]="form.invalid" class="btn btn-primary" >Submit and Place Order</button>
+    <a routerLink="/confirmation"><button [disabled]="form.invalid" class="btn btn-primary" (click)="passNameTotal(fullname, total)">Submit and Place Order</button></a>
 </form>
-
+<!-- <router-outlet (activate)="activated($event)"></router-outlet> -->
 <button class="btn btn-primary" (click)="clearCart()"> Clear all the cart items</button>
