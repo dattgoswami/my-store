@@ -13,14 +13,14 @@ export class CartComponent implements OnInit {
   address: string = '';
   cardnumber: string = '';
   total: number = 0;
-  // quantity: number[] = [];
   constructor(private cartService: CartService) {}
 
   ngOnInit(): void {
     this.productsQuantity = this.cartService.getCartItems();
-    // for (let index = 0; index < this.productsQuantity.length; index++) {
-    //   this.quantity[index] = this.productsQuantity[index].quantity;
-    // }
+    this.total = this.getTotal();
+  }
+  ngDoCheck(): void {
+    this.cartService.updateOrderQuantity(this.productsQuantity);
     this.total = this.getTotal();
   }
   clearCart(): void {
@@ -32,6 +32,7 @@ export class CartComponent implements OnInit {
     alert(`${this.fullname} your order has been placed!`);
   }
   getTotal(): number {
+    this.total = 0;
     for (let index = 0; index < this.productsQuantity.length; index++) {
       this.total +=
         this.productsQuantity[index].product.price *
@@ -41,10 +42,5 @@ export class CartComponent implements OnInit {
   }
   passNameTotal(fullname: string, total: number): void {
     this.cartService.addOrderDetails(fullname, total);
-  }
-  onQuantityChange(quantity: number, id: number) {
-    alert('something changed');
-    this.cartService.updateOrder(id, quantity);
-    this.ngOnInit();
   }
 }

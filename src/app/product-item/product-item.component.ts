@@ -24,20 +24,8 @@ export class ProductItemComponent implements OnInit {
     };
     this.quantity = 1;
   }
-
   ngOnInit(): void {}
-  // addToCart(product: Product) {
-  //   this.cartService.addToCart(product, this.quantity);
-  //   alert('Product added to the cart!');
-  // }
-
-  // @Output() addToCart = new EventEmitter<ProductQuantity>();
-
   handleAddToCart() {
-    // this.addToCart.emit({
-    //   product: this.product,
-    //   quantity: Number(this.quantity),
-    // });
     let flag: boolean = this.cartService.addToCart({
       product: this.product,
       quantity: Number(this.quantity),
@@ -48,7 +36,6 @@ export class ProductItemComponent implements OnInit {
       alert('Product already exists in the cart!');
     }
   }
-
   passDataDetail(productValue: Product, quantityValue: number) {
     this.produdctItemDetail.addProductDetail({
       product: productValue,

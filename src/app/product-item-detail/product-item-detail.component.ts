@@ -13,31 +13,13 @@ export class ProductItemDetailComponent implements OnInit {
   constructor(
     private cartService: CartService,
     private productItemDetailService: ProductItemDetailService
-  ) {
-    // this.product = {
-    //   id: 0,
-    //   name: 'some item',
-    //   price: 0.0,
-    //   url: 'some url',
-    //   description: 'some description',
-    //   // quantity: 1,
-    // };
-    // this.quantity = 1;
-  }
+  ) {}
 
   ngOnInit(): void {
     this.productQuantity = this.productItemDetailService.getProductDetail();
   }
-  // addToCart(product: Product) {
-  //   this.cartService.addToCart(product, 1);
-  //   alert('Product added to the cart!');
-  // }
 
   handleAddToCart() {
-    // this.addToCart.emit({
-    //   product: this.product,
-    //   quantity: Number(this.quantity),
-    // });
     let flag: boolean = this.cartService.addToCart({
       product: this.productQuantity.product,
       quantity: Number(this.productQuantity.quantity),

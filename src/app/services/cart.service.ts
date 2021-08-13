@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
-
-import { Product, ProductQuantity } from '../models/Product';
+import { ProductQuantity } from '../models/Product';
 
 @Injectable({
   providedIn: 'root',
@@ -22,7 +21,6 @@ export class CartService {
     return false;
   }
   addToCart(productQuantity: ProductQuantity): boolean {
-    // product.quantity = quantity;
     if (!this.checkIfProductExists(productQuantity.product.id)) {
       this.productQuantityList.push(productQuantity);
       return true;
@@ -39,11 +37,14 @@ export class CartService {
   getOrderDetails(): { fullname: string; total: number } {
     return { fullname: this.fullname, total: this.total };
   }
-  updateOrder(idValue: number, quantityNew: number): void {
+  updateOrder(quantityNew: number, idValue: number): void {
     for (let index = 0; index < this.productQuantityList.length; index++) {
       if (this.productQuantityList[index].product.id === idValue) {
         this.productQuantityList[index].quantity = quantityNew;
       }
     }
+  }
+  updateOrderQuantity(productQuantity: ProductQuantity[]): void {
+    this.productQuantityList = productQuantity;
   }
 }

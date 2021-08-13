@@ -1,12 +1,11 @@
 
-<div class="cart-container" *ngFor="let productQ of productsQuantity">
+<div class="cart-container" *ngFor="let productQ of productsQuantity; let i=index">
     <ul>
 <li>{{productQ.product.name}}</li>
 <li>{{productQ.product.price}}</li>
 </ul>
 <img src="{{productQ.product.url}}" alt="{{productQ.product.description}}">
-<input type="number" min="1" max="100" value="{{productQ.quantity}}">
-<!-- <input type="number" min="1" max="100" value="{{productQ.quantity}}" [(ngModel)]="quantity" (ngModelChange)="onQuantityChange(productQ.product.id, productQ.quantity)"> -->
+<input type="number" min="1" max="100" value="{{productsQuantity[i].quantity}}" [(ngModel)]="productsQuantity[i].quantity">
 </div>
 <p><b>Total:</b> {{total}}</p>
 <form #form="ngForm">
@@ -19,5 +18,4 @@
     <br>
     <a routerLink="/confirmation"><button [disabled]="form.invalid" class="btn btn-primary" (click)="passNameTotal(fullname, total)">Submit and Place Order</button></a>
 </form>
-<!-- <router-outlet (activate)="activated($event)"></router-outlet> -->
 <button class="btn btn-primary" (click)="clearCart()"> Clear all the cart items</button>

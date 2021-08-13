@@ -3,15 +3,7 @@
     <p>{{productQuantity.product.name}}</p>
     <p>{{productQuantity.product.price}}</p>
     <p>{{productQuantity.product.description}}</p>
-    <!-- <p>{{product.description}}</p> -->
-    <!-- <input type="number" min="1" max="100" value="{{product.quantity}}"> -->
-    <!-- <button class="btn btn-primary" (click)="addToCart(product)">Add to cart</button> -->
     <input id="quantity" type="number" min="1" max="100" value="productQuantity.quantity" [(ngModel)]="productQuantity.quantity">
-      <button class="btn btn-primary"
-                (click)="handleAddToCart()">
-            Add To Cart
-        </button>   
+    <button class="btn btn-primary" (click)="handleAddToCart()"> Add To Cart</button>   
     <a routerLink="/">Return to Product List</a>
 </div>
-
-<!-- <input type="number" min="1" max="100"> -->

@@ -11,7 +11,6 @@ const routes: Routes = [
   { path: 'product-detail', component: ProductItemDetailComponent },
   { path: 'confirmation', component: ConfirmationComponent },
 ];
-
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],

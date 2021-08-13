@@ -8,7 +8,6 @@ import { Observable } from 'rxjs';
 })
 export class ProductService {
   constructor(private http: HttpClient) {}
-
   // // https://www.techiediaries.com/angular-local-json-files/
   getProductList(): Observable<Product[]> {
     return this.http.get<Product[]>('../../assets/data.json');
