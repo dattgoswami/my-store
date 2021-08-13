@@ -6,6 +6,7 @@
 </ul>
 <img src="{{productQ.product.url}}" alt="{{productQ.product.description}}">
 <input type="number" min="1" max="100" value="{{productQ.quantity}}">
+<!-- <input type="number" min="1" max="100" value="{{productQ.quantity}}" [(ngModel)]="quantity" (ngModelChange)="onQuantityChange(productQ.product.id, productQ.quantity)"> -->
 </div>
 <p><b>Total:</b> {{total}}</p>
 <form #form="ngForm">

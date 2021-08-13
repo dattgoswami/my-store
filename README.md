@@ -1,12 +1,13 @@
 # MyStore
 
--> describe application
--> key features / functionalities
-=> instructions to start the project
+MyStore is a front-end for a single page e-commerce application, that currently reads the data from the data.json file stored under assets. The home page displays all the products that are available and on clicking the image users can go to the product details page. Once the selection is made and products are added to the cart, the user can check the items in the cart and enter their details and place the order.
+The key components are product-list (has a child component producr-item which deals with single products) and cart. The other two components are product-item-detail(which is used to view the description of the product) and the order confirmation page.  
+The entities for the model are the Product entity and the combination of Product and their quantity which is used for cart related functionalities.
+The services include the cart service which deals with everything related to the cart, product service which is responsible for fetching the data from the file and the product-item-detail service that is used to share data between the product-item component and the product-item-detail.
 
 ## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Run `ng serve -o` for a dev server. This will open the application in your browser at `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
 ## Code scaffolding
 

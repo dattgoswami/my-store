@@ -39,4 +39,11 @@ export class CartService {
   getOrderDetails(): { fullname: string; total: number } {
     return { fullname: this.fullname, total: this.total };
   }
+  updateOrder(idValue: number, quantityNew: number): void {
+    for (let index = 0; index < this.productQuantityList.length; index++) {
+      if (this.productQuantityList[index].product.id === idValue) {
+        this.productQuantityList[index].quantity = quantityNew;
+      }
+    }
+  }
 }
