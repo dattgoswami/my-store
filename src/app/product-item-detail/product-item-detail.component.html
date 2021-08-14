@@ -1,9 +1,11 @@
 <div class="detail-container">
     <img class="product-image" src="{{productQuantity.product.url}}" alt="{{productQuantity.product.description}}">
+    <div class="detail-item">
     <p>{{productQuantity.product.name}}</p>
     <p>{{productQuantity.product.price}}</p>
     <p>{{productQuantity.product.description}}</p>
-    <input id="quantity" type="number" min="1" max="100" value="productQuantity.quantity" [(ngModel)]="productQuantity.quantity">
+    </div>
+    <input class="select-input" id="quantity" type="number" min="1" max="100" value="productQuantity.quantity" [(ngModel)]="productQuantity.quantity">
     <button class="btn btn-primary" (click)="handleAddToCart()"> Add To Cart</button>   
     <a routerLink="/">Return to Product List</a>
 </div>
