@@ -3,7 +3,7 @@ img {
   border-radius: 10px;
 }
 
-.form-margin {
+/* .form-margin {
   margin-bottom: 12px;
 }
 
@@ -24,7 +24,7 @@ img {
 .number-input {
   width: 80px;
   text-align: center;
-}
+} */
 
 .cart-container {
   display: flex;
@@ -33,7 +33,7 @@ img {
   margin-top: 64px;
 }
 
-.cart-panel {
+/* .cart-panel {
   margin-left: 50px;
   margin-right: 50px;
 }
@@ -42,4 +42,4 @@ img {
   display: flex;
   justify-content: center;
   margin-top: 64px;
-}
+} */

@@ -5,7 +5,7 @@
   max-width: 1024px;
   margin-bottom: 64px;
 }
-div.box {
+/* div.box {
   height: 300px;
   width: 300px;
   background-color: #4c982b;
@@ -14,4 +14,4 @@ div.box {
 .product-container {
   display: flex;
   justify-content: center;
-}
+} */
